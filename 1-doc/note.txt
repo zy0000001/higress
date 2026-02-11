@@ -12,8 +12,8 @@ go mod tidy
 ======================================================================================
 ===================================代码结构============================================
 ======================================================================================
+组件编译说明：https://higress.cn/docs/latest/dev/architecture/
 源码阅读指引：https://higress.cn/docs/latest/dev/code/
-组件编译说明：https://higress.cn/zh-cn/docs/dev/architecture.html
 如何在本地开发和调试 Higress Pilot：https://higress.cn/blog/pilot-debug/
 如何在本地开发和调试 Higress 控制台：https://higress.cn/blog/console-dev/?spm=36971b57.cc8ed01.0.0.49666734BCyjoP
 如何在本地进行higress调试和端到端测试：https://higress.cn/blog/e2e-debug/?spm=36971b57.cc8ed01.0.0.49666734BCyjoP
