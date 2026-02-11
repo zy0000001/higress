@@ -1,4 +1,17 @@
-
+======================================================================================
+===================================项目构建======================================
+======================================================================================
+# 克隆代码
+git clone https://github.com/zy0000001/higress.git --recurse-submodules
+# 进入项目
+cd higress
+# 先拉取最新的子模块配置
+git submodule sync
+# 重新拉取子模块代码
+git submodule update --init --recursive --force
+# 先清理旧的依赖缓存
+go mod tidy
+# 将mod中的external替换为envoy或者istio，具体目录见git submodule sync输出
 ======================================================================================
 ===================================代码结构============================================
 ======================================================================================
@@ -15,17 +28,3 @@ higress-core源码分析：https://higress.cn/blog/higress-code/?spm=36971b57.cc
 higress核心组件和原理、Wasm插件实现原理：https://blog.csdn.net/qq_40378034/article/details/147012475
 Proxy-Wasm Go SDK：https://blog.csdn.net/qq_40378034/article/details/148381697?spm=1001.2101.3001.6650.8&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-8-148381697-blog-147012475.235%5Ev43%5Epc_blog_bottom_relevance_base7&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-8-148381697-blog-147012475.235%5Ev43%5Epc_blog_bottom_relevance_base7&utm_relevant_index=14
 Envoy 中 Wasm 源码解析：https://blog.csdn.net/qq_40378034/article/details/148381773
-
-
-======================================================================================
-===================================项目构建======================================
-======================================================================================
-# 进入项目
-cd higress
-# 先拉取最新的子模块配置
-git submodule sync
-# 重新拉取子模块代码
-git submodule update --init --recursive --force
-# 先清理旧的依赖缓存
-go mod tidy
-# 将mod中的external替换为envoy或者istio，具体目录见git submodule sync输出
