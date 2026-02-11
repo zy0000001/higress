@@ -5,17 +5,14 @@
 git clone https://github.com/zy0000001/higress.git --recurse-submodules
 # 进入项目
 cd higress
-# 先拉取最新的子模块配置
-git submodule sync
-# 重新拉取子模块代码
-git submodule update --init --recursive --force
+# 下载上游代码仓库并应用现有的补丁
+make prebuild
 # 先清理旧的依赖缓存
 go mod tidy
-# 将mod中的external替换为envoy或者istio，具体目录见git submodule sync输出
 ======================================================================================
 ===================================代码结构============================================
 ======================================================================================
-源码阅读指引：https://higress.cn/zh-cn/docs/dev/code.html
+源码阅读指引：https://higress.cn/docs/latest/dev/code/
 组件编译说明：https://higress.cn/zh-cn/docs/dev/architecture.html
 如何在本地开发和调试 Higress Pilot：https://higress.cn/blog/pilot-debug/
 如何在本地开发和调试 Higress 控制台：https://higress.cn/blog/console-dev/?spm=36971b57.cc8ed01.0.0.49666734BCyjoP
