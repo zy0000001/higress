@@ -2,6 +2,15 @@
 
 Higress 是基于 Envoy 和 Istio 进行二次定制化开发构建和功能增强，同时利用 Envoy 和 Istio 一些插件机制，实现了一个轻量级的网关服务。其包括 3 个核心组件：Higress Controller（控制器）、Higress Gateway（网关）和 Higress Console（控制台）。
 下图概况了其核心工作流程：
+1. Higress Console：控制台
+2. Higress Controller：同步配置
+   * Higress Core：适配各类配置源的协议，将配置以MCP协议(非K8S环境下同步配置)同步Discovery
+   * Discovery：负责将Istio的配置同步给数据面
+3. Higress Gateway：数据面，负责请求路由
+   * Pilot Agent：主要负责Envoy生命周期的管理，代理Envoy和Discovery之间的xDS请求，通过Unix Domain Socket（UDS）进行通信
+   * Envoy：数据面，将请求路由至后端服务
+
+备注：Pilot = Discovery + Pilot Agent
 
 ![img](./images/img_02_01.png)
 
